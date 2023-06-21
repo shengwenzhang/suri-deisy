@@ -1,0 +1,149 @@
+<html>
+<head>
+  <title>文字播放页面</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .text {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      opacity: 0;
+      animation: text-animation 10s ease forwards;
+      position: absolute;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    @keyframes text-animation {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .image-container {
+      position: fixed;
+      top: 37%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.0); /* 增大缩放比例 */
+      opacity: 0;
+      animation: image-animation 5s ease forwards;
+      animation-delay: 1s; /* 在文字播放结束后开始动画 */
+    }
+    
+
+    .imagemap-container {
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+        animation: image-animation 5s ease forwards;
+        animation-delay: 45s; /* 在文字播放结束后开始动画 */
+    }
+
+
+
+
+    @keyframes image-animation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+
+    }
+    @keyframes fade-out {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay loop muted>
+    <source src="3.mp4" type="video/mp4">
+  </video>
+
+  <div class="text-container">
+    <div class="text" style="animation-delay: 0s; animation-duration: 5s;">啊啊啊！</div>
+    <div class="text" style="animation-delay: 5s; animation-duration: 5s;">你竟然成功突破了幻境</div>
+    <div class="text" style="animation-delay: 10s; animation-duration: 5s;">那看来你已经得到了钥匙</div>
+    <div class="text" style="animation-delay: 15s; animation-duration: 5s;">看在你如此机智勇敢</div>
+    <div class="text" style="animation-delay: 20s; animation-duration: 5s;">我就将这个藏宝图交给你</div>
+    <div class="text" style="animation-delay: 25s; animation-duration: 5s;">但是我也无法打开这个藏宝图</div>
+    <div class="text" style="animation-delay: 30s; animation-duration: 5s;">因为达菲在这里施了魔法</div>
+    <div class="text" style="animation-delay: 35s; animation-duration: 5s;">只有答对问题的精灵才可以打开它</div>
+    <div class="text" style="animation-delay: 40s; animation-duration: 5s;">你去试一试吧</div>
+
+
+    <!-- <div class="text" style="animation-delay: 5s; animation-duration: 5s;">欢迎来到达菲的魔法森林</div>
+    <div class="text" style="animation-delay: 10s; animation-duration: 5s;">这将是你的第一项挑战</div>
+    <div class="text" style="animation-delay: 15s; animation-duration: 5s;">你需要在魔法深林中找到我放置的藏宝图</div>
+    <div class="text" style="animation-delay: 20s; animation-duration: 5s;">根据藏宝图中的线索完成任务</div>
+    <div class="text" style="animation-delay: 25s; animation-duration: 5s;">并最终找到藏宝图中的宝藏</div>
+    <div class="text" style="animation-delay: 30s; animation-duration: 5s;">但是现在森林里有一群土拨鼠</div>
+    <div class="text" style="animation-delay: 35s; animation-duration: 5s;">他们无恶不作，到处偷东西</div>
+    <div class="text" style="animation-delay: 40s; animation-duration: 5s;">我的藏宝图就被他们偷走了</div>
+    <div class="text" style="animation-delay: 45s; animation-duration: 5s;">你们需要先打败这群土拨鼠</div>
+    <div class="text" style="animation-delay: 50s; animation-duration: 5s;">然后才能找到藏宝图</div>
+    <div class="text" style="animation-delay: 55s; animation-duration: 5s;">加油吧！</div> -->
+  </div>
+
+
+  <a href="68/index.html">
+    <div class="image-container">
+      <img src="dishu.png">
+    </div>
+  </a>
+
+<div class="imagemap-container">
+    <a href="map.html">
+        <img src="map.png" >
+    </a>
+</div>
+
+  
+
+</body>
+</html>
+
+
+
+
+
+
+

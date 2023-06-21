@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>模块页面</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .modules {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .module-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .module {
+      width: 250px;
+      height: 250px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .module-image {
+      width: 100%;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .module-text {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .module-text a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .module:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .module.module-1 .module-image {
+      background-image: url('picture/29.png');
+    }
+
+    .module.module-2 .module-image {
+      background-image: url('picture/30.png');
+    }
+
+    .module.module-3 .module-image {
+      background-image: url('picture/40.png');
+    }
+
+    .module.module-4 .module-image {
+      background-image: url('picture/50.png');
+    }
+
+    .module.module-5 .module-image {
+      background-image: url('picture/31.png');
+    }
+
+    .module.module-6 .module-image {
+      background-image: url('picture/54.png');
+    }
+
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay loop muted>
+    <source src="42.MP4" type="video/mp4">
+  </video>
+
+  <div class="modules">
+    <div class="module-row">
+      <div class="module module-1">
+        <div class="module-image"></div>
+        <div class="module-text">
+          <a href="dream1/dream.html">达菲的藏宝图</a>
+        </div>
+      </div>
+      <div class="module module-2">
+        <div class="module-image"></div>
+        <div class="module-text">
+          <a href="page2.html">模块2</a>
+        </div>
+      </div>
+      <div class="module module-3">
+        <div class="module-image"></div>
+        <div class="module-text">
+          <a href="page3.html">模块3</a>
+        </div>
+      </div>
+    </div>
+    <div class="module-row">
+      <div class="module module-4">
+        <div class="module-image"></div>
+        <div class="module-text">
+          <a href="page4.html">模块4</a>
+        </div>
+      </div>
+      <div class="module module-5">
+        <div class="module-image"></div>
+        <div class="module-text">
+          <a href="page5.html">模块5</a>
+        </div>
+      </div>
+      <div class="module module-6">
+        <div class="module-image"></div>
+        <div class="module-text">
+          <a href="page6.html">模块6</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

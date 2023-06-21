@@ -1,0 +1,111 @@
+<html>
+<head>
+  <title>文字播放页面</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .text {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      opacity: 0;
+      animation: text-animation 10s ease forwards;
+      position: absolute;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+
+
+    
+
+
+
+    @keyframes text-animation {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+
+    .image-container {
+      position: fixed;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.05);
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay loop muted>
+    <source src="26.mp4" type="video/mp4">
+  </video>
+  <div class="text-container">
+    <div class="text" style="animation-delay: 0s; animation-duration: 5s;">欢迎来到迪士尼魔法世界</div>
+    <div class="text" style="animation-delay: 5s; animation-duration: 5s;">我是你的好朋友星黛露</div>
+    <div class="text" style="animation-delay: 10s; animation-duration: 5s;">这是一个充满魔法的世界</div>
+    <div class="text" style="animation-delay: 15s; animation-duration: 5s;">大家可以许下很多愿望</div>
+    <div class="text" style="animation-delay: 20s; animation-duration: 5s;">任何的愿望都是可以被实现的</div>
+    <div class="text" style="animation-delay: 25s; animation-duration: 5s;">那我现在想许一个愿望</div>
+    <div class="text" style="animation-delay: 30s; animation-duration: 5s;">我知道你一定会帮我实现的</div>
+    <div class="text" style="animation-delay: 35s; animation-duration: 5s;">我的好朋友达菲答应说要给我准备一些礼物</div>
+    <div class="text" style="animation-delay: 40s; animation-duration: 5s;">但是达菲这段时间却失踪了</div>
+    <div class="text" style="animation-delay: 45s; animation-duration: 5s;">达菲告诉我他为了满足我的冒险心</div>
+    <div class="text" style="animation-delay: 50s; animation-duration: 5s;">我需要完成很多任务获得礼物</div>
+    <div class="text" style="animation-delay: 55s; animation-duration: 5s;">他说任务可能是游戏，也可能是一些问题</div>
+    <div class="text" style="animation-delay: 60s; animation-duration: 5s;">而且这些任务还不能一起完成</div>
+    <div class="text" style="animation-delay: 65s; animation-duration: 5s;">达菲说我每完成一个任务就可以获得一个礼物</div>
+    <div class="text" style="animation-delay: 70s; animation-duration: 5s;">每隔一段时间我就可以解锁一个新的任务</div>
+    <div class="text" style="animation-delay: 75s; animation-duration: 5s;">他说当我完成了最后一个任务</div>
+    <div class="text" style="animation-delay: 80s; animation-duration: 5s;">他就会带着最后一个礼物出现在我的面前</div>
+    <div class="text" style="animation-delay: 85s; animation-duration: 5s;">可我真的不在乎礼物</div>
+    <div class="text" style="animation-delay: 90s; animation-duration: 5s;">我只是好想他啊</div>
+    <div class="text" style="animation-delay: 95s; animation-duration: 5s;">你可以跟我一起回答问题完成任务吗</div>
+    <div class="text" style="animation-delay: 100s; animation-duration: 5s;">我可以给你全部的礼物，而我只想见到达菲</div>
+    <div class="text" style="animation-delay: 105s; animation-duration: 5s;">如果你准备好了，那我们开始吧！</div>
+</div>
+
+  <div class="image-container">
+    <a href="home/home.html">
+      <img src="48.png" alt="跳转图片" style="cursor: pointer;">
+    </a>
+  </div>
+</body>
+</html>

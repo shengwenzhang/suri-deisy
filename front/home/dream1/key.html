@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Key Animation</title>
+<style>
+    @keyframes growAndRotate {
+        0% {
+            transform: scale(0); 
+        }
+        50% {
+            transform: scale(1); 
+        }
+        100% {
+            transform: scale(1); 
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg); 
+        }
+        100% {
+            transform: rotate(720deg); 
+        }
+    }
+
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 10px #ff0;
+            transform: scale(1);
+        }
+        50% {
+            box-shadow: 0 0 20px #ff0, 0 0 30px #ff0;
+            transform: scale(1.05);
+        }
+        100% {
+            box-shadow: 0 0 10px #ff0;
+            transform: scale(1);
+        }
+    }
+
+    body {
+        /* 添加背景图像 */
+        background-image: url("68/css/background.png");
+        /* 使背景图像覆盖整个页面 */
+        background-size: cover;
+        /* 防止背景图像滚动 */
+        background-attachment: fixed;
+    }
+
+    .key {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 30vmin;    
+        height: auto;    
+        transform: translate(-50%, -50%);
+    }
+
+    .key img {
+        width: 100%;
+        height: auto;
+        animation: growAndRotate 5s linear, rotate 5s linear, glow 2s ease-in-out infinite 5s;
+    }
+
+    .caption {
+        text-align: center;
+        color: #353131;
+        font-size: 2em;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<a href="dream3.html">
+    <div class="key">
+        <img src="key.png">
+        <p class="caption">恭喜你找到了开启藏宝图的钥匙</p>
+    </div>
+</a>
+
+</body>
+</html>

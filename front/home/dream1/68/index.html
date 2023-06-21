@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>HTML5切积木益智游戏</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    .tooltip {
+		position: fixed;
+		display: inline-block;
+		cursor: pointer;
+		top: 20%;
+		left: 20%;
+		transform: translate(-50%, -50%);
+	}
+
+
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    window.onload = function() {
+        var tooltip = document.querySelector('.tooltip');
+        var tooltipText = tooltip.querySelector('.tooltiptext');
+
+        tooltip.addEventListener('mouseenter', function() {
+            tooltipText.style.visibility = 'visible';
+            tooltipText.style.opacity = '1';
+        });
+
+        tooltip.addEventListener('mouseleave', function() {
+            tooltipText.style.visibility = 'hidden';
+            tooltipText.style.opacity = '0';
+        });
+    };
+</script>
+
+</head>
+<body>
+
+<!-- Game canvas -->
+<canvas id="c"></canvas>
+
+<!-- Gameplay HUD -->
+<div class="hud">
+    <div class="hud__score">
+        <div class="score-lbl"></div>
+        <div class="cube-count-lbl"></div>
+    </div>
+    <div class="pause-btn">
+        <div></div>
+    </div>
+    <div class="slowmo">
+        <div class="slowmo__bar"></div>
+    </div>
+</div>
+
+<!-- Menu System -->
+<div class="menus">
+    <div class="menu menu--main">
+        <h1>迪士尼幻境</h1>
+        <button type="button" class="play-normal-btn">开始游戏</button>
+        <button type="button" class="play-casual-btn">休闲模式</button>
+    </div>
+    <div class="menu menu--pause">
+        <h1>暂停</h1>
+        <button type="button" class="resume-btn">重新开始</button>
+        <button type="button" class="menu-btn--pause">主菜单</button>
+    </div>
+    <div class="menu menu--score">
+        <h1>游戏结束</h1>
+        <h2>分数:</h2>
+        <div class="final-score-lbl"></div>
+        <div class="high-score-lbl"></div>
+        <button type="button" class="play-again-btn">再玩一次</button>
+        <button type="button" class="menu-btn--score">主菜单</button>
+    </div>
+</div>
+
+<!-- 提示按钮 -->
+<div class="tooltip">
+    <span>提示</span>
+    <div class="tooltiptext">这是一些提示文字</div>
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>

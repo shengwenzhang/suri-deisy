@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新建页面</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        #bg-video {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+            background-size: cover;
+        }
+
+        #question-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);  /* 设置半透明背景 */
+            border: 2px solid #000000;
+            text-align: center;
+        }
+
+        #map-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            max-width: 100%;   
+            max-height: 100%;
+            display: none;
+            box-shadow: 0 0 30px 10px #ff0000;  /* 添加发光效果 */
+        }
+
+        #gif-image {
+            position: absolute;
+            top: 40%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            max-width: 20%;   /* 缩小图片大小 */
+            max-height: 20%;
+            display: none;
+            animation: pulse 2s infinite;  /* 添加动画 */
+        }
+
+        /* 定义动画 */
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        .image-with-text {
+            position: absolute;
+            top: 30%;    /* 调整图片的位置 */
+            left: 80%;
+            display: none;   /* 初始时隐藏图片 */
+            z-index: 2;  /* 设置z-index的值 */
+        }
+        .image-with-text img {
+            width: 200px;   /* 设置图片的宽度 */
+            height: auto;   /* 设置图片的高度 */
+            animation: pulse 2s infinite;  /* 添加动画 */
+        }
+        .image-with-text:hover .hover-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .hover-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;  /* 文字显示在图片上方 */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .hover-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;  /* 箭头位于提示框下方 */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="43.mp4" type="video/mp4">
+        你的浏览器不支持HTML5视频。
+    </video>
+    
+    <div id="question-box">
+        <h2>达菲的小秘密</h2>
+        <p>说出达菲心里最重要的那个人</p>
+        <input type="text" id="answer-input">
+        <button onclick="checkAnswer()">提交</button>
+    </div>
+    <div class="image-with-text">
+        <img src="47.png" alt="image">
+    <div class="hover-text">恭喜你打开了这个地图，这是一个神奇的宝藏题图，这里充满了宝藏与挑战，赶快点击你的第一个礼物吧</div>
+    </div>
+    <img id="map-image" src="map.png">
+    <a href="dream1gift.html">
+        <img id="gif-image" src="1.png">
+    </a>
+      
+
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("answer-input").value;
+            var correctAnswer = "1"; // 替换为实际的正确答案
+
+            if (answer === correctAnswer) {
+                document.getElementById("question-box").style.display = "none";
+                document.getElementById("map-image").style.display = "block";
+                document.getElementById("gif-image").style.display = "block";
+                document.querySelector(".image-with-text").style.display = "block";  /* 显示图片 */
+            } else {
+                alert("答案不正确，请再试一次。");
+            }
+        }
+    </script>
+</body>
+</html>
