@@ -1,0 +1,205 @@
+<html>
+<head>
+  <title>文字播放页面</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .text {
+      font-size: 70px;
+      font-weight: bold;
+      color: rgb(75, 75, 85);
+      opacity: 0;
+      animation: text-animation 10s ease forwards;
+      position: absolute;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    @keyframes text-animation {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+
+    
+
+
+    @keyframes pulse {
+        0% { transform: translate(-50%, -50%) scale(1); }
+        50% { transform: translate(-50%, -50%) scale(1.1); }
+        100% { transform: translate(-50%, -50%) scale(1); }
+    }
+    .image-with-text {
+        position: absolute;
+        top: 25%;    /* 调整图片的位置 */
+        left: 50%;
+
+        z-index: 2;  /* 设置z-index的值 */
+    }
+
+    .image-with-text img {
+        width: 30%;   /* 设置图片的宽度 */
+        height: auto;   /* 设置图片的高度 */
+        animation: pulse 2s infinite;  /* 添加动画 */
+    }
+    .da-with-text {
+        position: absolute;
+        top: 80%;    /* 调整图片的位置 */
+        left: 50%;
+
+        z-index: 2;  /* 设置z-index的值 */
+    }
+
+    .da-with-text img {
+        width: 30%;   /* 设置图片的宽度 */
+        height: auto;   /* 设置图片的高度 */
+        animation: pulse 2s infinite;  /* 添加动画 */
+    }
+    .da-with-text:hover .hover-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .image-with-text:hover .hover-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .hover-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;  /* 文字显示在图片上方 */
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .hover-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;  /* 箭头位于提示框下方 */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    @keyframes image-animation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+
+    }
+    @keyframes fade-out {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay loop muted>
+    <source src="44.mp4" type="video/mp4">
+  </video>
+
+  <div class="text-container">
+    <div class="text" style="animation-delay: 0s; animation-duration: 5s;">亲带的星黛露，我是达菲</div>
+    <div class="text" style="animation-delay: 5s; animation-duration: 5s;">看来你已经完成了魔幻森林里全部的挑战</div>
+    <div class="text" style="animation-delay: 10s; animation-duration: 5s;">那我也该兑现承诺了</div>
+    <div class="text" style="animation-delay: 15s; animation-duration: 5s;">我在你的编织挎包里放了睡觉的星黛露</div>
+    <div class="text" style="animation-delay: 20s; animation-duration: 5s;">这是我送给你的第一个礼物</div>
+    <div class="text" style="animation-delay: 25s; animation-duration: 5s;">快去找到她吧 </div>
+    <div class="text" style="animation-delay: 30s; animation-duration: 5s;">带上睡衣星黛露一起继续冒险吧！</div>
+
+
+
+    <!-- <div class="text" style="animation-delay: 5s; animation-duration: 5s;">欢迎来到达菲的魔法森林</div>
+    <div class="text" style="animation-delay: 10s; animation-duration: 5s;">这将是你的第一项挑战</div>
+    <div class="text" style="animation-delay: 15s; animation-duration: 5s;">你需要在魔法深林中找到我放置的藏宝图</div>
+    <div class="text" style="animation-delay: 20s; animation-duration: 5s;">根据藏宝图中的线索完成任务</div>
+    <div class="text" style="animation-delay: 25s; animation-duration: 5s;">并最终找到藏宝图中的宝藏</div>
+    <div class="text" style="animation-delay: 30s; animation-duration: 5s;">但是现在森林里有一群土拨鼠</div>
+    <div class="text" style="animation-delay: 35s; animation-duration: 5s;">他们无恶不作，到处偷东西</div>
+    <div class="text" style="animation-delay: 40s; animation-duration: 5s;">我的藏宝图就被他们偷走了</div>
+    <div class="text" style="animation-delay: 45s; animation-duration: 5s;">你们需要先打败这群土拨鼠</div>
+    <div class="text" style="animation-delay: 50s; animation-duration: 5s;">然后才能找到藏宝图</div>
+    <div class="text" style="animation-delay: 55s; animation-duration: 5s;">加油吧！</div> -->
+  </div>
+
+
+</div>
+<div class="image-with-text">
+    <img src="1.png" alt="image">
+<div class="hover-text">第一个礼物在编织包里哦</div>
+</div>
+
+</div>
+
+<div class="da-with-text">
+    <a href="../home.html">
+        <img src="47.png" alt="image">
+        <div class="hover-text">我们一起开启新的旅程吧！</div>
+    </a>
+</div>
+
+
+
+
+
+
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
